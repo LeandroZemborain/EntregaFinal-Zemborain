@@ -1,0 +1,56 @@
+
+[
+    {
+        "id": 1,
+        "nombre": "Copa del Mundo",
+        "desc": "La tercera!",
+        "precio": 1200,
+        "img": "./img/copa.webp",
+        "cantidad": 1
+    },
+
+    {
+        "id": 2,
+        "nombre": "Gokú",
+        "desc": "Porta espiral henki dama",
+        "precio": 500,
+        "img": "./img/goku.webp",
+        "cantidad": 1
+    },
+
+    {
+        "id": 3,
+        "nombre": "Homero",
+        "desc": "Porta esponja",
+        "precio": 900,
+        "img": "./img/homero.webp",
+        "cantidad": 1
+    },
+
+    {
+        "id": 4,
+        "nombre": "Messi",
+        "desc": "Muñeco",
+        "precio": 1600,
+        "img": "./img/messi.webp",
+        "cantidad": 1
+    },
+
+    {
+        "id": 5,
+        "nombre": "Stranger",
+        "desc": "Muñeco",
+        "precio": 1200,
+        "img": "./img/stranger.png",
+        "cantidad": 1
+    },
+
+    {
+        "id": 6,
+        "nombre": "Ciudad",
+        "desc": "Maqueta",
+        "precio": 500,
+        "img": "./img/ciudadjpg.jpg",
+        "cantidad": 1
+    }
+]
