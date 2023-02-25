@@ -84,7 +84,7 @@ const pintarCarrito = () => {
     vaciar()
     pintarCarrito()
     carritoCounter()
-    alerta4()
+    alerta5()
   })
 
   //pinto boton finalizar compra
@@ -117,6 +117,7 @@ const eliminarProducto = (id) => {
   saveLocal()
   carritoCounter()
   pintarCarrito()
+  toastifyEliminar()
 }
 // funcion mostrar cantidad numero carrito 
 const carritoCounter = () => {

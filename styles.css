@@ -32,6 +32,11 @@ body{
   box-shadow: 1px 2px 2px #24303b ;
   filter: drop-shadow(0 -6mm 4mm rgb(0, 179, 210));
 }
+.logo:hover{
+  opacity: 0.7;
+  transform: scale(1.1);
+  transition: 0.8s ease-in-out;
+}
 #usuario{
   font-size: 32px;
   color: #fff;
@@ -56,6 +61,11 @@ body{
   font-size: 35px;
   margin-right: 20px;
   cursor: pointer;
+}
+.ver-carrito:hover{
+  box-shadow: 10px 1px 15px #23b7dccf inset;
+  border-radius: 50%;
+  transition: .8s ease-in-out;
 }
 .cantidad-carrito {
   background-color: red;
@@ -165,6 +175,9 @@ body{
   border-radius: 50%;
   border: solid 2px red
 }
+.modal-header-button:hover{
+  opacity: 0.7;
+}
 .modal-container > .modal-content {
   display: flex;
   justify-content: space-between;
@@ -242,6 +255,9 @@ body{
   width: 127%;
   height: 47px;
 }
+.btn-vaciar:hover{
+  opacity: 0.7;
+}
 .fin-compra{
   background-color: #09a011e1;
   color: #fff;
@@ -249,6 +265,9 @@ body{
   border-radius: 24% 76% 54% 46% / 47% 22% 78% 53% ;
   width: 127%;
   height: 47px;
+}
+.fin-compra:hover{
+  opacity: 0.7;
 }
 
 /*resp acotado*/

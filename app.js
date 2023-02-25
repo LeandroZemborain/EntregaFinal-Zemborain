@@ -95,6 +95,25 @@ function toastify() {
     onClick: function () { pintarCarrito() } // Callback after click
   }).showToast();
 }
+//funcion eliminar del carrito toastify
+function toastifyEliminar() {
+  Toastify({
+    text: "Eliminado del carrito",
+    duration: 3000,
+    destination: "",
+    newWindow: true,
+    close: true,
+    gravity: "bottom", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(to right, red, #f27474)",
+      borderRadius: "10px",
+      justifyContent: "space-between",
+    },
+    onClick: function () { pintarCarrito() } // Callback after click
+  }).showToast();
+}
 //sweet alert
 //funcion capturar nombre y pintarlo 
 function alerta() {
@@ -127,4 +146,7 @@ function alerta3() {
 //funcion finalizar compra carrito vacio
 function alerta4() {
   swal("Carrito vacío!", "Debes ingresar productos al carrito", "error")
+}
+function alerta5(){
+  swal("Carrito vacío!","", "error")
 }
