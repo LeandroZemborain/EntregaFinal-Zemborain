@@ -12,12 +12,11 @@ const pintarCarrito = () => {
     `
   modalContainer.append(modalHeader)
 
-  //funcion boton cerrar
+  //boton cerrar
   const modalButton = document.querySelector(".modal-header-button")
   modalButton.addEventListener("click", () => {
     modalContainer.style.display = "none"
   })
-
 
   //pintar contenido del carrito recorriendo
   carrito.forEach((product) => {
@@ -64,7 +63,6 @@ const pintarCarrito = () => {
     })
   })
 
-
   //mostrar total 
   const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
   const totalCompra = document.createElement("div")
@@ -86,6 +84,7 @@ const pintarCarrito = () => {
     vaciar()
     pintarCarrito()
     carritoCounter()
+    alerta4()
   })
 
   //pinto boton finalizar compra
@@ -104,11 +103,8 @@ const pintarCarrito = () => {
     carritoCounter()
   })
 }
-
-  
-//funcion ver carrito
+//boton ver carrito
 verCarrito.addEventListener("click", pintarCarrito)
-
 //funcion vaciar carrito
 const vaciar = () => {
   carrito.length = 0
@@ -122,7 +118,6 @@ const eliminarProducto = (id) => {
   carritoCounter()
   pintarCarrito()
 }
-
 // funcion mostrar cantidad numero carrito 
 const carritoCounter = () => {
   cantidadCarrito.style.display = "block"

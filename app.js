@@ -6,7 +6,6 @@ const showAlert = document.getElementById("showAlert")
 const cantidadCarrito = document.getElementById("cantidadCarrito")
 const usuario = document.getElementById("usuario")
 const btnUser = document.getElementById("btn-user")
-
 //array carrito y/o ls
 const carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
@@ -14,15 +13,13 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || []
 const nombreUsuario = JSON.parse(localStorage.getItem("nombre"))
 nombreUsuario ? (usuario.innerHTML = `Usuario: ${nombreUsuario.toUpperCase()}`) && (alerta2()) : alerta()
 
-
-
 // boton cambiar usuario
 btnUser.addEventListener('click', () => {
   JSON.parse(localStorage.getItem("nombre"))
   localStorage.removeItem("nombre")
+  vaciar()
   window.location.reload()
 })
-
 
 //traigo json de productos y los pinto
 fetch("data.json")
@@ -75,10 +72,6 @@ fetch("data.json")
   })
   .catch((err) => console.log("Error inesperado, decime que paso 😜", err))
 
-
-
-
-
 //funcion guardar al ls
 const saveLocal = () => {
   localStorage.setItem("carrito", JSON.stringify(carrito))
@@ -102,7 +95,8 @@ function toastify() {
     onClick: function () { pintarCarrito() } // Callback after click
   }).showToast();
 }
-//funcion capturar nombre y pintarlo sweet alert
+//sweet alert
+//funcion capturar nombre y pintarlo 
 function alerta() {
   swal("3D Mundo", "Ingresa tu nombre:", {
     content: "input",
@@ -122,9 +116,6 @@ function alerta() {
       }
     })
 }
-
-
-
 //funcion bienvenida con nombre del ls
 function alerta2() {
   swal("3D Mundo", `"Bienvenido: ${nombreUsuario.toUpperCase()}"`)
