@@ -142,9 +142,8 @@ body{
 /*contenedor modal*/
 .modal-container {
   width: 97%;
-  height: 90%;
+  height: 97%;
   margin: 0 2%;
-  max-height: 90vh;
   color: #fff;
   background-color: #0f2039;
   display: none;
