@@ -15,11 +15,12 @@ const nombreUsuario = JSON.parse(localStorage.getItem("nombre"))
 nombreUsuario ? (usuario.innerHTML = `Usuario: ${nombreUsuario.toUpperCase()}`) && (alerta2()) : alerta()
 
 
+
 // boton cambiar usuario
-  btnUser.addEventListener('click', () => {
-    JSON.parse(localStorage.getItem("nombre"))
-    localStorage.removeItem("nombre")
-    window.location.reload()
+btnUser.addEventListener('click', () => {
+  JSON.parse(localStorage.getItem("nombre"))
+  localStorage.removeItem("nombre")
+  window.location.reload()
 })
 
 
@@ -45,7 +46,7 @@ fetch("data.json")
       content.append(comprar)
 
 
-      
+
       //boton comprar
       comprar.addEventListener("click", () => {
         toastify()
@@ -75,15 +76,15 @@ fetch("data.json")
   .catch((err) => console.log("Error inesperado, decime que paso 😜", err))
 
 
-  
-  
-  
+
+
+
 //funcion guardar al ls
 const saveLocal = () => {
-    localStorage.setItem("carrito", JSON.stringify(carrito))
+  localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 //funcion agregar carrito toastify
-function toastify (){
+function toastify() {
   Toastify({
     text: "Agregado al carrito",
     duration: 3000,
@@ -96,9 +97,9 @@ function toastify (){
     style: {
       background: "linear-gradient(to right, #00b09b, #09a011e1)",
       borderRadius: "10px",
-      justifyContent:"space-between",
+      justifyContent: "space-between",
     },
-    onClick: function(){pintarCarrito()} // Callback after click
+    onClick: function () { pintarCarrito() } // Callback after click
   }).showToast();
 }
 //funcion capturar nombre y pintarlo sweet alert
@@ -107,22 +108,32 @@ function alerta() {
     content: "input",
   })
     .then((value) => {
-      swal(`Bienvenido: ${value.toUpperCase()}`);
-      localStorage.setItem("nombre", JSON.stringify(value))
-      const nombreUsuario = JSON.parse(localStorage.getItem("nombre"))
-      usuario.innerHTML = `Usuario: ${nombreUsuario.toUpperCase()}`
-
-    });
+      if (Number(value)) {
+        swal("Debes ingresar letras!","","warning")
+          .then(() => { window.location.reload() })
+      } else if (value) {
+        swal(`Bienvenido: ${value.toUpperCase()}`)
+        localStorage.setItem("nombre", JSON.stringify(value))
+        const nombreUsuario = JSON.parse(localStorage.getItem("nombre"))
+        usuario.innerHTML = `Usuario: ${nombreUsuario.toUpperCase()}`
+      } else {
+        swal("Debes ingresar un nombre!","", "warning")
+          .then(() => { window.location.reload() })
+      }
+    })
 }
+
+
+
 //funcion bienvenida con nombre del ls
 function alerta2() {
   swal("3D Mundo", `"Bienvenido: ${nombreUsuario.toUpperCase()}"`)
 }
 //funcion finalizar compra
-function alerta3(){
+function alerta3() {
   swal("Compra exitosa!", "Gracias por comprar en 3D Mundo", "success")
 }
 //funcion finalizar compra carrito vacio
-function alerta4(){
+function alerta4() {
   swal("Carrito vacío!", "Debes ingresar productos al carrito", "error")
 }
